@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Dar Sahel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Andalus';
+     background-color: #fdfaf5;
+      color:#1D3D25; }
+
+    /* NAVBAR FIXED */
+    header {
+      background: #1D3D25;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a { color: white; margin-left: 20px; text-decoration: none; font-size: 14px; }
+
+    /* MENU SECTION */
+    .menu-container {
+      max-width: 800px;
+      margin: 120px auto 50px; /* margin-top كبير حيت الـ nav فيكس */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu-title {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #d4a373;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .columns-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .menu-column {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .column-header {
+      background: #1D3D25;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      border-radius: 4px;
+    }
+
+    ul { list-style: none; }
+
+    li {
+      font-size: 18px;
+      padding: 12px 0;
+      border-bottom: 1px dotted #d4a373;
+      transition: 0.3s;
+    }
+
+    li:hover {
+      color: #d4a373;
+      padding-left: 10px;
+    }
+
+    .cta-plats {
+      margin-top: 50px;
+      display: inline-block;
+      text-decoration: none;
+      color: #1D3D25;
+      font-weight: bold;
+      border: 2px solid #1D3D25;
+      padding: 10px 25px;
+      transition: 0.3s;
+    }
+
+    .cta-plats:hover {
+      background: #1D3D25;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dar Sahel</h1>
+  <nav>
+    <a href="ex.html">Accueil</a>
+    <a href="menu.html">Menu</a>
+    <a href="plats.html">Les Plats</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="menu-container">
+  <h2 class="menu-title">Notre Carte</h2>
+
+  <div class="columns-container">
+    
+    <div class="menu-column">
+      <h3 class="column-header">Spécialités Marocaines</h3>
+      <ul>
+        <li>Couscous aux Sept Légumes</li>
+        <li>Tajine d'Agneau aux Pruneaux</li>
+        <li>Pastilla au Poulet et Amandes</li>
+        <li>Harira Traditionnelle</li>
+        <li>Rfissa au Poulet</li>
+        <li>Tanjia Marrakchia</li>
+      </ul>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="column-header">Spécialités Tchadiennes</h3>
+      <ul>
+        <li>La Boule (Esh) avec Sauce Gombo</li>
+        <li>Tchep</li>
+        <li>Grillades de l'Aïr</li>
+        <li>Karkandji (Hibiscus) Cuisine</li>
+        <li>Kissar (Crêpes de riz)</li>
+        <li>Maffé au Boeuf</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <a href="plats.html" class="cta-plats">Voir les détails et photos →</a>
+</div>
+
+</body>
+</html>
