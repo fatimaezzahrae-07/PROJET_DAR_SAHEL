@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dar Sahel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: "Andalus";
+      overflow-x: hidden;
+    }
+
+   
+    header {
+      background: #1D3D25; 
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      height: 100px; 
+      width: 100%;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px; 
+    }
+
+    .logo-img {
+      height: 100px; 
+      width: auto;
+      ; 
+    }
+
+    .brand h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+      ;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #F9A602; 
+    }
+.title {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 40px;
+  color:#F9A602
+}
+.plats-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.plats-box {
+  width: 40%;
+  text-align: center;
+  color:rgb(149, 102, 14);
+}
+
+
+.plat-card {
+  background: #e4dbdb;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.plat-card:hover {
+  transform: scale(1.05);
+}
+
+.plat-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+h3{
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="LOGO(1).png" alt="Logo" class="logo-img">
+    <h1>
+      <p>Dar</p> 
+    <p> Sahel</p>
+    </h1>
+  </div>
+  
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="menu.html">Menu</a>
+    <a href="plats.html">Plats</a>
+    <a href="réservation.html">Réservation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section class="plats">
+  <h2 class="title">NOS PLATS</h2>
+
+  <div class="plats-container">
+
+    <!-- Maroc -->
+    <div class="plats-box">
+      <h3>Saveurs du Maroc</h3>
+
+      <div class="plat-card">
+        <img src="maroc1.jpeg">
+        <p>Couscous aux septs Légumes - 90DH</p>
+      </div>
+
+      <div class="plat-card">
+        <img src="maroc2.jpeg">
+        <p>Tajine - 80DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="maroc3.jpeg">
+        <p>Pastilla - 100DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="maroc4.jpeg">
+        <p>Harrira Traditioneelle - 40DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="maroc5.jpeg">
+        <p>Rfissa au Poulet - 100dh</p>
+      </div>
+
+
+         <div class="plat-card">
+        <img src="maroc6.jpeg">
+        <p>Tanjia Marrakchia - 65DH</p>
+      </div>
+
+    </div>
+
+    <!-- Tchad -->
+    <div class="plats-box">
+      <h3>Saveurs du Tchad</h3>
+
+      <div class="plat-card">
+        <img src="tchad1.jpeg">
+        <p>La Boule avec souce Gombo- 90dh</p>
+      </div>
+
+      <div class="plat-card">
+        <img src="tchad2.jpeg">
+        <p>Tchep- 140DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="tchad3.jpeg">
+        <p>Grillades de l'air- 120DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="tchad4.jpeg">
+        <p>Canda- 80DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="tchad5.jpeg">
+        <p>Kissar avec Souce Rouge-70DH</p>
+      </div>
+
+       <div class="plat-card">
+        <img src="tchad6.jpeg">
+        <p>Maffé au Boeug- 60DH</p>
+      </div>
+    </div>
+
+  </div>
+</section>
