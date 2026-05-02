@@ -58,10 +58,6 @@ function sendMessage() {
     return;
   }
 
-  if (message.length < 10) {
-    alert("Message trop court");
-    return;
-  }
-
   alert("Message envoyé avec succès !");
+  return
 }

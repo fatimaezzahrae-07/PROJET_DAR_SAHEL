@@ -115,13 +115,40 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
-  padding-top: 20px;
 }
 
     button:hover {
       background: #bc8a5f;
       transform: translateY(-2px);
     }
+    @media (max-width: 768px) {
+  body{font-family: 'Andalus';}
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
   </style>
 </head>
 <body>
@@ -149,7 +176,7 @@
     <h2>L'ÂME DU SAHARA</h2>
     <h3>LE GOÛT DU PARTAGE</h3>
     <p>Une rencontre entre les saveurs du Maroc et du Tchad</p>
-    <button onclick="goToMenu()" class="btn">Découvrir le menu</button>
+        <button onclick="goToMenu()" class="btn">Decouvrir le menu</button>
 
   </div>
 </section>
