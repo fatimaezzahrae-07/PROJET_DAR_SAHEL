@@ -42,22 +42,73 @@ function validateForm() {
   alert("Réservation envoyée avec succès !");
   return true;
 }
-function sendMessage() {
+document.getElementById('submitBtn').addEventListener('click', function() {
 
-  let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("mail").value.trim();
-  let message = document.getElementById("message").value.trim();
+  let nameInput = document.getElementById('userName');
+  let emailInput = document.getElementById('userEmail');
+  let messageInput = document.getElementById('userMessage');
 
-  if (!/^[A-Za-zÀ-ÿ\s]{3,}$/.test(name)) {
-    alert("Nom invalide");
+  let statusDiv = document.getElementById('statusMessage');
+  let btn = this;
+
+  let namePattern = /^[a-zA-ZÀ-ÿ\s]{2,}$/;
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Reset
+  statusDiv.innerText = "";
+
+  // Name
+  if (nameInput.value.trim() === "") {
+    statusDiv.style.color = "#ff4d4d";
+    statusDiv.innerText = "Le nom est obligatoire.";
     return;
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Email invalide");
+  if (!namePattern.test(nameInput.value.trim())) {
+    statusDiv.style.color = "#ff4d4d";
+    statusDiv.innerText = "Nom invalide.";
     return;
   }
 
-  alert("Message envoyé avec succès !");
-  return
-}
+  // Email
+  if (emailInput.value.trim() === "") {
+    statusDiv.style.color = "#ff4d4d";
+    statusDiv.innerText = "L'email est obligatoire.";
+    return;
+  }
+
+  if (!emailPattern.test(emailInput.value.trim())) {
+    statusDiv.style.color = "#ff4d4d";
+    statusDiv.innerText = "Email invalide.";
+    return;
+  }
+
+  // Message
+  if (messageInput.value.trim() === "") {
+    statusDiv.style.color = "#ff4d4d";
+    statusDiv.innerText = "Le message est obligatoire.";
+    return;
+  }
+
+  if (messageInput.value.trim().length < 10) {
+    statusDiv.style.color = "#ff4d4d";
+    statusDiv.innerText = "Le message doit contenir au moins 10 caractères.";
+    return;
+  }
+
+  // Success
+  btn.innerText = "Envoi en cours...";
+  btn.disabled = true;
+
+  setTimeout(function() {
+    statusDiv.style.color = "#4BB543";
+    statusDiv.innerText = "Message envoyé avec succès !";
+
+    btn.innerText = "Envoyer";
+    btn.disabled = false;
+
+    nameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
+  }, 1500);
+});

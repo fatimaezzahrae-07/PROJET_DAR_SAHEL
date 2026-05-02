@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dar Sahel</title>
+  <title>Dar Sahel - Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -13,276 +14,233 @@
 
     body {
       width: 100%;
-      height: 100%;
-      font-family: "Andlus";
+      font-family: "Andalus", serif;
+      background: #fef8eb;
       overflow-x: hidden;
     }
 
-   
     header {
-      background: #1D3D25; 
+      background: #1D3D25;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 50px;
-      height: 100px; 
+      padding: 10px 5%;
+      min-height: 80px;
       width: 100%;
-      position: relative;
-      z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      flex-wrap: wrap;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px; 
+      gap: 10px;
+      text-decoration: none;
+      color: white;
     }
 
     .logo-img {
-      height: 100px; 
+      height: 60px;
       width: auto;
-      ; 
     }
 
     .brand h1 {
-      font-size: 26px;
+      font-size: 22px;
       letter-spacing: 1px;
-      ;
+      line-height: 1.1;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
       color: white;
-      margin: 0 12px;
+      margin: 5px 12px;
       text-decoration: none;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 500;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #F9A602; 
+      color: #F9A602;
     }
-    .hero { background-color:#4f7b4f; text-align: center; padding: 60px 20px; color: white; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 45px; text-transform: uppercase; }
 
-    .two-columns { display: grid; grid-template-columns: 1fr 1fr; }
-    .info-side { padding: 60px 5%; }
-    
-    .contact-row { display: flex; gap: 20px; margin-bottom: 30px; align-items: center; }
-    .contact-icon { width: 50px; height: 50px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; color: var(--gold); }
-    .contact-label { font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
-    .contact-value { font-size: 16px; color: var(--text-dark); margin-top: 4px; }
-
-    .contact-form-container { padding: 60px 10%; background: #365436; color: white; }
-    .contact-form-container input, .contact-form-container textarea {
-        width: 100%; padding: 12px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(201, 151, 58, 0.5); color: white;
+    .hero {
+      background: linear-gradient(120deg, #162712, #1d2e1a);
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
     }
-    .btn-send {  background-color:#b1a273; padding: 15px; border-radius: 50px; width:50%; cursor: pointer; font-weight: bold; text-transform: uppercase; }
 
-    footer { background: #1D3D25; text-align: center; padding: 30px; color: #b1a273; }
-/* =========================
-   GLOBAL RESET
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    .hero h1 {
+      font-size: 35px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1200px;
+      margin: 40px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .info-side {
+      padding: 60px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      align-items: center;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #c9973a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c9973a;
+      font-size: 20px;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      color: #c9973a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .contact-value {
+      font-size: 18px;
+      color: #1D3D25;
+      margin-top: 4px;
+    }
+
+    .contact-form-container {
+      padding: 60px;
+      background: #1a2e1a;
+      color: white;
+    }
+
+    .contact-form-container input,
+    .contact-form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(201, 151, 58, 0.5);
+      color: white;
+      outline: none;
+      font-family: "Andalus", serif;
+    }
+    .error-message {
+  color: #ff4d4d;
+  font-size: 12px;
+  display: block;
+  height: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  font-family: "Andalus", serif;
-}
+    .contact-form-container input::placeholder,
+    .contact-form-container textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-/* =========================
-   HEADER
-========================= */
-header {
-  background: #1D3D25;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  height: 100px;
-  width: 100%;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
+    .btn-send {
+      background: #c9973a;
+      color: #1a2e1a;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .btn-send:active { transform: scale(0.96); }
+    .btn-send:hover { background: #b38630; }
 
-.logo-img {
-  height: 80px;
-}
+    #statusMessage {
+      margin-bottom: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      min-height: 24px;
+    }
 
-nav a {
-  color: white;
-  margin: 0 12px;
-  text-decoration: none;
-  font-size: 20px;
-  transition: 0.3s;
-}
+    footer {
+      background: #1D3D25;
+      text-align: center;
+      padding: 40px;
+      color: white;
+      font-size: 12px;
+    }
 
-nav a:hover {
-  color: #F9A602;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-  background-color: #4f7b4f;
-  text-align: center;
-  padding: 60px 20px;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 45px;
-  text-transform: uppercase;
-}
-
-.hero p {
-  font-size: 16px;
-}
-
-/* =========================
-   LAYOUT SECTIONS
-========================= */
-.two-columns,
-.reservation-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-/* =========================
-   FORMS
-========================= */
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-}
-
-.btn-send,
-.btn-submit {
-  background: #b1a273;
-  padding: 15px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-
-.btn-send:hover,
-.btn-submit:hover {
-  background: #8f7e55;
-}
-
-/* =========================
-   IMAGE SIDE
-========================= */
-.image-side {
-  background-size: cover;
-  background-position: center;
-  min-height: 500px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: #1D3D25;
-  text-align: center;
-  padding: 30px;
-  color: #b1a273;
-}
-
-/* =========================
-   📱 MOBILE RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  body{font-family:'Analus' ;}
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-    text-align: center;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  nav a {
-    font-size: 16px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
-
-  .two-columns,
-  .reservation-container {
-    grid-template-columns: 1fr;
-  }
-
-  .form-side,
-  .info-side,
-  .contact-form-container {
-    padding: 20px;
-  }
-
-  .image-side {
-    display: none;
-  }
-
-  input, textarea, select {
-    font-size: 14px;
-  }
-
-  .btn-send,
-  .btn-submit {
-    width: 100%;
-  }
-}  </style>
+    @media (max-width: 900px) {
+      header {
+        justify-content: center;
+        padding: 15px;
+      }
+      .brand {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      nav a {
+        font-size: 16px;
+        margin: 5px 8px;
+      }
+      .two-columns {
+        grid-template-columns: 1fr;
+        margin: 20px;
+      }
+      .info-side, .contact-form-container {
+        padding: 40px 20px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">
+  <a href="index.html" class="brand">
     <img src="LOGO(1).png" alt="Logo" class="logo-img">
-    <h1>
-      <p>Dar</p> 
-    <p> Sahel</p>
-    </h1>
-  </div>
+    <h1>Dar<br>Sahel</h1>
+  </a>
   
   <nav>
     <a href="index.html">Accueil</a>
     <a href="menu.html">Menu</a>
     <a href="plats.html">Plats</a>
     <a href="réservation.html">Réservation</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
+
 <div class="hero">
   <h1>Contactez-Nous</h1>
   <p>Une question ? Une suggestion ? Nous sommes à votre écoute.</p>
@@ -292,29 +250,47 @@ footer {
   <div class="info-side">
     <div class="contact-row">
       <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-      <div><div class="contact-label">Adresse</div><div class="contact-value"> Rue de l'Atlas, Marrakech</div></div>
+      <div>
+        <div class="contact-label">Adresse</div>
+        <div class="contact-value">Rue de l'Atlas, Marrakech</div>
+      </div>
     </div>
     <div class="contact-row">
       <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-      <div><div class="contact-label">Téléphone</div><div class="contact-value">+212 6 62 34 56 78</div></div>
+      <div>
+        <div class="contact-label">Téléphone</div>
+        <div class="contact-value">+212 6 62 34 56 78</div>
+      </div>
     </div>
     <div class="contact-row">
       <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-      <div><div class="contact-label">Email</div><div class="contact-value">contact@darsahel.com</div></div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">contact@darsahel.com</div>
+      </div>
     </div>
   </div>
 
   <div class="contact-form-container">
-    <h2 style="font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; font-size: 32px;">Envoyez un Message</h2>
-    <input type="text" id="name" placeholder="Votre Nom">
-    <input type="email" id="mail" placeholder="Votre Email">
-    <textarea id="message" rows="5" placeholder="Votre Message"></textarea>
-<button class="btn-send" onclick="sendMessage()">Envoyer</button>  </div>
+    <h2 style="margin-bottom: 20px; font-size: 28px; color: #c9973a;">Envoyez un Message</h2>
+    <input type="text" id="userName" placeholder="Votre Nom">
+<span class="error-message" id="nameError"></span>
+
+<input type="email" id="userEmail" placeholder="Votre Email">
+<span class="error-message" id="emailError"></span>
+
+<textarea rows="5" id="userMessage" placeholder="Votre Message"></textarea>
+<span class="error-message" id="messageError"></span>
+    <div id="statusMessage"></div>
+    
+    <button class="btn-send" id="submitBtn">Envoyer</button>
+  </div>
 </div>
 
 <footer>
-  <p>&copy; 2025 Dar Sahel-Authenticité & Saveurs</p>
+  <p>&copy; 2025 Dar Sahel - Authenticité & Saveurs</p>
 </footer>
-<script src="scripts.js"></script>
+
+<script src="scripts.js"></script> 
 </body>
 </html>
