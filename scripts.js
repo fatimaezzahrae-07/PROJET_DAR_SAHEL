@@ -45,7 +45,7 @@ function validateForm() {
 function sendMessage() {
 
   let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("email").value.trim();
+  let email = document.getElementById("mail").value.trim();
   let message = document.getElementById("message").value.trim();
 
   if (!/^[A-Za-zÀ-ÿ\s]{3,}$/.test(name)) {
