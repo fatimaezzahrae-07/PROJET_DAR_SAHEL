@@ -12,19 +12,16 @@ function validateForm() {
   let time = document.getElementById("time").value;
   let people = parseInt(document.getElementById("people").value);
 
-  // NAME
-  if (name.length < 3 || !/^[A-Za-zÀ-ÿ\s]+$/.test(name)) {
+  if (!/^[A-Za-zÀ-ÿ\s]{3,}$/.test(name)) {
     alert("Nom invalide");
     return false;
   }
 
-  // PHONE (Maroc)
   if (!/^(05|06|07)[0-9]{8}$/.test(phone)) {
-    alert("Numéro invalide");
+    alert("Téléphone invalide");
     return false;
   }
 
-  // DATE
   let today = new Date().toISOString().split("T")[0];
 
   if (!date || date < today) {
@@ -32,14 +29,12 @@ function validateForm() {
     return false;
   }
 
-  // TIME
   if (!time) {
-    alert("Choisissez une heure");
+    alert("Choisir une heure");
     return false;
   }
 
-  // PEOPLE
-  if (isNaN(people) || people < 1 || people > 20) {
+  if (people < 1 || people > 20) {
     alert("Nombre de personnes invalide");
     return false;
   }
@@ -50,34 +45,23 @@ function validateForm() {
 function sendMessage() {
 
   let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("mail").value.trim();
+  let email = document.getElementById("email").value.trim();
   let message = document.getElementById("message").value.trim();
 
-  // ================= NOM =================
-  if (name.length < 3) {
-    alert("Le nom doit contenir au moins 3 caractères");
-    return false;
+  if (!/^[A-Za-zÀ-ÿ\s]{3,}$/.test(name)) {
+    alert("Nom invalide");
+    return;
   }
 
-  let nameRegex = /^[A-Za-zÀ-ÿ\s]+$/;
-  if (!nameRegex.test(name)) {
-    alert("Le nom doit contenir uniquement des lettres");
-    return false;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Email invalide");
+    return;
   }
 
-  // ================= EMAIL =================
-  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert("Adresse email invalide");
-    return false;
-  }
-
-  // ================= MESSAGE =================
   if (message.length < 10) {
-    alert("Le message doit contenir au moins 10 caractères");
-    return false;
+    alert("Message trop court");
+    return;
   }
 
   alert("Message envoyé avec succès !");
-  return true;
 }
