@@ -12,41 +12,35 @@ function validateForm() {
   let time = document.getElementById("time").value;
   let people = parseInt(document.getElementById("people").value);
 
-  if (name.length < 3) {
-    alert("Le nom doit contenir au moins 3 caractères");
+  // NAME
+  if (name.length < 3 || !/^[A-Za-zÀ-ÿ\s]+$/.test(name)) {
+    alert("Nom invalide");
     return false;
   }
 
-  let nameRegex = /^[A-Za-zÀ-ÿ\s]+$/;
-  if (!nameRegex.test(name)) {
-    alert("Le nom doit contenir uniquement des lettres");
+  // PHONE (Maroc)
+  if (!/^(05|06|07)[0-9]{8}$/.test(phone)) {
+    alert("Numéro invalide");
     return false;
   }
 
-  let phoneRegex = /^(05|06|07)[0-9]{8}$/;
-  if (!phoneRegex.test(phone)) {
-    alert("Numéro de téléphone invalide");
-    return false;
-  }
-
-  if (date === "") {
-    alert("Veuillez choisir une date");
-    return false;
-  }
-
+  // DATE
   let today = new Date().toISOString().split("T")[0];
-  if (date < today) {
-    alert("Veuillez choisir une date valide");
+
+  if (!date || date < today) {
+    alert("Date invalide");
     return false;
   }
 
-  if (time === "") {
-    alert("Veuillez choisir une heure");
+  // TIME
+  if (!time) {
+    alert("Choisissez une heure");
     return false;
   }
 
+  // PEOPLE
   if (isNaN(people) || people < 1 || people > 20) {
-    alert("Nombre de personnes invalide (1 à 20)");
+    alert("Nombre de personnes invalide");
     return false;
   }
 
