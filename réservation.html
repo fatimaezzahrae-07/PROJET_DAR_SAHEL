@@ -69,7 +69,7 @@
     
 
     .hero { background: rgb(74, 136, 74); text-align: center; padding: 60px 20px; color: white; }
-    .hero h1 { font-family: 'Andalus', serif; font-size: 45px; letter-spacing: 4px; text-transform: uppercase; }
+    .hero h1 { font-family: 'Andalus'; font-size: 45px; letter-spacing: 4px; text-transform: uppercase; }
     .hero p { color:white; font-size: 14px; margin-top: 10px; }
     
     .reservation-container {
@@ -146,20 +146,20 @@
 
 <div class="reservation-container">
   <div class="form-side">
-    <form>
+    <form onsubmit="return validateForm()">>
       <div class="form-group">
         <label>Nom complet *</label>
-        <input type="text" placeholder="Votre nom" required>
+        <input type="text" id="name" placeholder="Votre nom" required>
       </div>
       <div class="form-group">
         <label>Téléphone *</label>
-        <input type="tel" placeholder="06 00 00 00 00" required>
+        <input type="tel" id="phone" placeholder="06 00 00 00 00" required>
       </div>
       <div class="form-group">
         <label>Date & Heure *</label>
         <div style="display: flex; gap: 10px;">
-          <input type="date" required>
-          <select required>
+          <input type="date" id="date" required>
+          <select id="time" required>
             <option value="">Heure</option>
             <option>12:00</option>
             <option>13:30</option>
@@ -171,11 +171,11 @@
       </div>
       <div class="form-group">
         <label>Nombre de personnes*</label>
-        <input type="number" min="1" max="20" value="2">
+        <input type="number" id="people" min="1" max="20" value="2">
       </div>
       <div class="form-group">
         <label>Message spécial*</label>
-        <textarea rows="3" placeholder="Allergies, anniversaire..."></textarea>
+        <textarea id="message" rows="3" placeholder="Allergies, anniversaire..."></textarea>
       </div>
       <button type="submit" class="btn-submit">Confirmer ma Demande</button>
     </form>
@@ -186,6 +186,6 @@
 <footer>
   <p>&copf; 2025 Dar Sahel - L'Âme du Sahara, le Goût du Partage</p>
 </footer>
-
+<script src="scripts.js"></script>
 </body>
 </html>
